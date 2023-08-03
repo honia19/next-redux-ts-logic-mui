@@ -1,3 +1,126 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": {
+      "commonjs": true,
+      "es6": true,
+      "browser": true,
+      "node": true
+  },
+  "plugins": [
+      "import",
+      "react",
+      "react-hooks",
+      "@typescript-eslint",
+      "prettier",
+      "testing-library",
+      "no-relative-import-paths"
+  ],
+  "ignorePatterns": [
+      "build/",
+      "dist/",
+      "node_modules/",
+      ".next"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.spec.ts", "**/*.spec.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ],
+  "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:prettier/recommended",
+      "plugin:testing-library/react",
+      "prettier",
+      "next/core-web-vitals"
+  ],
+  "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "sourceType": "module"
+      }
+  },
+  "rules": {
+      "no-unused-vars": 0,
+      "import/prefer-default-export": 0,
+      "camelcase": 0,
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            ["builtin", "external"],
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object"
+          ],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ],
+      "prettier/prettier": "error",
+      "no-console": "warn",
+      "no-eval": "error",
+      "react/jsx-uses-vars": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/alt-text": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "react/destructuring-assignment": [
+          "error",
+          "always",
+          {
+            "ignoreClassFields": true
+          }
+        ],
+        "no-unused-expressions": [
+          "error",
+          {
+            "allowTernary": true
+          }
+        ],
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["@mui/*/*/*"]
+          }
+        ],
+        "testing-library/await-async-query": "error",
+        "testing-library/no-await-sync-query": "error",
+        "testing-library/no-debugging-utils": "error",
+        "testing-library/no-dom-import": "off"
+  },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+      "react": {
+          "version": "detect"
+      },
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true
+        },
+          "node": {
+              "extensions": [
+                  ".js",
+                  ".ts",
+                  ".tsx",
+                  ".jsx"
+              ]
+          }
+      }
+  }
 }
