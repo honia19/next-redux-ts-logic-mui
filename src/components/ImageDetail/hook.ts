@@ -30,6 +30,10 @@ const useContainer = () => {
     [isFavoriteSelectedImage, dispatch]
   );
 
+  const handleCloseDetailImage = useCallback(() => {
+    dispatch(clearSelectedImage());
+  }, [dispatch]);
+
   const toggleFavoriteImage = useCallback(
     (selectedImage: IImageDetail['selectedImage']) => () => {
       if (isFavoriteSelectedImage) {
@@ -49,6 +53,7 @@ const useContainer = () => {
     toggleFavoriteImage,
     isFavoriteSelectedImage,
     handleRemoveFavoriteImage,
+    handleCloseDetailImage,
   };
 };
 

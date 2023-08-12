@@ -1,7 +1,8 @@
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import dayjs from 'dayjs';
 import { memo } from 'react';
+
+import { StyledCustomButton } from '@/components/shared/Button/styled';
 
 import Image from '../shared/Image';
 
@@ -27,10 +28,11 @@ const ImageComponent = ({
     toggleFavoriteImage,
     isFavoriteSelectedImage,
     handleRemoveFavoriteImage,
+    handleCloseDetailImage,
   } = useContainer();
 
   return (
-    <section className="detail-section">
+    <section className="h-full p-5">
       <Image
         id={id}
         src={src}
@@ -43,34 +45,61 @@ const ImageComponent = ({
         isShowFavorite
         isFavorite={isFavoriteSelectedImage}
       />
-      <section className="detail-section__information">
-        <Typography variant="h6" borderBottom={5} />
-        <div>
-          <p>Uploaded by</p>
-          <strong>{uploadedBy}</strong>
+      <section className="mt-4 text-sm">
+        <Typography variant="h6" className="border-b font-medium">
+          Information
+        </Typography>
+        <div className="flex-between border-b-loose">
+          <p className="text-grey-text">Uploaded by</p>
+          <p className="font-medium">{uploadedBy}</p>
         </div>
-        <div>
-          <p>Created</p>
-          <strong>{dayjs(createdAt).format('MMMM D, YYYY')}</strong>
+        <div className="flex-between border-b-loose">
+          <p className="text-grey-text">Created</p>
+          <p className="font-medium">
+            {dayjs(createdAt).format('MMMM D, YYYY')}
+          </p>
         </div>
-        <div>
-          <p>Last modified</p>
-          <strong>{dayjs(updatedAt).format('MMMM D, YYYY')}</strong>
+        <div className="flex-between border-b-loose">
+          <p className="text-grey-text">Last modified</p>
+          <p className="font-medium">
+            {dayjs(updatedAt).format('MMMM D, YYYY')}
+          </p>
         </div>
-        <div>
-          <p>Dimensions</p>
-          <strong>{`${dimensions.width} x ${dimensions.height}`}</strong>
+        <div className="flex-between border-b-loose">
+          <p className="text-grey-text">Dimensions</p>
+          <p className="font-medium">{`${dimensions.width} x ${dimensions.height}`}</p>
         </div>
-        <div>
-          <p>Resolution</p>
-          <strong>{`${resolution.width} x ${resolution.height}`}</strong>
+        <div className="flex-between border-b-loose">
+          <p className="text-grey-text">Resolution</p>
+          <p className="font-medium">{`${resolution.width} x ${resolution.height}`}</p>
         </div>
       </section>
-      <section className="detail-section__description">
-        <Typography variant="h5" />
-        <p>{description}</p>
+      <section className="mt-4 text-sm font-medium">
+        <Typography variant="h6">Description</Typography>
+        <p className="font-normal text-grey-text">{description ?? 'N/a'}</p>
       </section>
-      <Button onClick={handleRemoveFavoriteImage(id)}>Delete</Button>
+      <section className="mt-4 flex justify-between gap-5">
+        <StyledCustomButton
+          onClick={handleCloseDetailImage}
+          fontWeight={500}
+          fontSize={14}
+          width="100%"
+          height={35}
+          borderColor="#98a4b5"
+        >
+          Close
+        </StyledCustomButton>
+        <StyledCustomButton
+          onClick={handleRemoveFavoriteImage(id)}
+          fontWeight={500}
+          fontSize={14}
+          width="100%"
+          height={35}
+          borderColor="#98a4b5"
+        >
+          Delete
+        </StyledCustomButton>
+      </section>
     </section>
   );
 };

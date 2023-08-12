@@ -17,7 +17,7 @@ const GalleryComponent = ({ tab }: ITab) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-3.5">
       {images.map(({ id, url, filename, sizeInBytes }: IImageItem) => (
         <Image
           key={id}
@@ -26,8 +26,8 @@ const GalleryComponent = ({ tab }: ITab) => {
           alt={filename}
           fileName={filename}
           size={sizeInBytes}
-          width={200}
-          height={200}
+          width={160}
+          height={160}
           onSelectImage={handleSelectImage(id)}
         />
       ))}

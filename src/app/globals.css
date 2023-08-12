@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  .border-b-loose {
+    @apply border-b leading-loose;
+  }
+}

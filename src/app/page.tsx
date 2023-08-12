@@ -1,11 +1,7 @@
-import { Inter } from 'next/font/google';
-
 import MainContent from '@/components/MainContent';
 
-const inter = Inter({ subsets: ['latin'] });
-
-const MainPage = () => {
+const RootPage = () => {
   return <MainContent />;
 };
 
-export default MainPage;
+export default RootPage;

@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('next').NextConfig} */
+
+const path = require('path');
+
 const nextConfig = {
   formats: ['image/avif', 'image/webp'],
   images: {
@@ -10,6 +14,9 @@ const nextConfig = {
         pathname: '/images/**',
       },
     ],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
 };
 

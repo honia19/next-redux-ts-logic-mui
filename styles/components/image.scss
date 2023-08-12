@@ -1,0 +1,17 @@
+.custom-image {
+    width: 160px;
+    height: 115px;
+    border-radius: 10px;
+    object-fit: cover;
+
+    &-full {
+        width: 400px;
+        height: 180px;
+    }
+
+    &-selected {
+        border-width: 3px;
+        border-color: $pink-blueberry;
+        border-style: solid;
+    }
+}

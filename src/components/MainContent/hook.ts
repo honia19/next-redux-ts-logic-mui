@@ -14,25 +14,25 @@ function useContainer() {
   const [tab, setTab] = useState<Tab>(Tab.RECENT);
 
   const dispatch = useAppDispatch();
-  const selectedImage: IImage = useAppSelector(selectedImageSelector);
+  const selectedRecentImage: IImage = useAppSelector(selectedImageSelector);
   const selectedFavoritedImage: IImage = useAppSelector(
     selectedFavoritedImageSelector
   );
 
   const selectedOptionImage = useMemo(
-    () => selectedImage || selectedFavoritedImage,
-    [selectedImage, selectedFavoritedImage]
+    () => selectedRecentImage || selectedFavoritedImage,
+    [selectedRecentImage, selectedFavoritedImage]
   );
 
   const handleTabChange = useCallback(
     (_: React.SyntheticEvent, newValue: Tab) => {
-      if (selectedImage) {
+      if (selectedOptionImage) {
         dispatch(clearSelectedImage());
       }
 
       setTab(newValue);
     },
-    [setTab, selectedImage, dispatch]
+    [setTab, selectedOptionImage, dispatch]
   );
 
   return {
