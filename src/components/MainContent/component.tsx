@@ -18,11 +18,11 @@ const MainContentComponent = () => {
   const { selectedImage, handleTabChange, tab } = useContainer();
 
   return (
-    <div className="gallery flex h-full min-h-screen w-full">
+    <div className="gallery flex h-full min-h-screen w-full xsm:flex-col sm:flex-col">
       <div
-        className={clsx('bg-grey-snow px-5 pt-5', {
+        className={clsx('bg-grey-snow px-5 pt-5 xsm:w-full sm:w-full', {
           'min-w-full': !selectedImage,
-          'w-3/4': selectedImage,
+          'w-3/4 md:w-3/5 lg:w-2/3': selectedImage,
         })}
       >
         <section className="flex w-full flex-col">
@@ -34,17 +34,17 @@ const MainContentComponent = () => {
               <Tab wrapped label="Recently Added" value={EnumTab.RECENT} />
               <Tab wrapped label="Favorited" value={EnumTab.FAVORITE} />
             </TabList>
-            <TabPanel value={EnumTab.RECENT}>
+            <TabPanel value={EnumTab.RECENT} className="xsm:pr-0 sm:pr-0">
               <Gallery tab={tab} />
             </TabPanel>
-            <TabPanel value={EnumTab.FAVORITE}>
+            <TabPanel value={EnumTab.FAVORITE} className="xsm:pr-0 sm:pr-0">
               <Gallery tab={tab} />
             </TabPanel>
           </TabContext>
         </section>
       </div>
       {selectedImage && (
-        <div className="flex w-1/4 flex-col">
+        <div className="flex w-1/4 flex-col xsm:w-full sm:w-full md:w-2/5 lg:w-1/3">
           <ImageDetail
             src={selectedImage.url}
             fileName={selectedImage.filename}
