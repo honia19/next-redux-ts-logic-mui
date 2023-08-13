@@ -10,4 +10,8 @@
   .border-b-loose {
     @apply border-b leading-loose;
   }
+
+  .responsive-p {
+    @apply xsm:pr-0 sm:pr-0 !important;
+  }
 }

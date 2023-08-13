@@ -34,10 +34,10 @@ const MainContentComponent = () => {
               <Tab wrapped label="Recently Added" value={EnumTab.RECENT} />
               <Tab wrapped label="Favorited" value={EnumTab.FAVORITE} />
             </TabList>
-            <TabPanel value={EnumTab.RECENT} className="xsm:pr-0 sm:pr-0">
+            <TabPanel value={EnumTab.RECENT} className="responsive-p">
               <Gallery tab={tab} />
             </TabPanel>
-            <TabPanel value={EnumTab.FAVORITE} className="xsm:pr-0 sm:pr-0">
+            <TabPanel value={EnumTab.FAVORITE} className="responsive-p">
               <Gallery tab={tab} />
             </TabPanel>
           </TabContext>
