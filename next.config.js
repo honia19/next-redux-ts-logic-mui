@@ -4,6 +4,9 @@
 const path = require('path');
 
 const nextConfig = {
+  env: {
+    API_HOST: process.env.API_HOST,
+  },
   formats: ['image/avif', 'image/webp'],
   images: {
     remotePatterns: [

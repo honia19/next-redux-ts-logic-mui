@@ -1,4 +1,4 @@
-export const API_HOST = 'https://agencyanalytics-api.vercel.app';
+export const API_HOST = process.env.API_HOST;
 
 // Image route
 export const imagesRoute = `/images.json`;
