@@ -26,7 +26,7 @@ pnpm install && pnpm dev
 ![mockup](https://github.com/honia19/next-redux-ts-logic-mui/assets/19596245/b1c53e2f-475f-479d-b292-b28a5bbadc41)
 
 ## Demo
-[Link](https://next-redux-ts-logic-mui.vercel.app/p:// "Link")
+[Link](https://next-redux-ts-logic-o0tarnviq-vladyslavhonchenko.vercel.app/ "Link")
 
 
 
