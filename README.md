@@ -1,10 +1,10 @@
 ## Getting Started
 ```bash
-npm run dev
+npm i && npm run dev
 # or
-yarn dev
+yarn && yarn dev
 # or
-pnpm dev
+pnpm install && pnpm dev
 ```
 ## Technical Stack
 - Typescript
