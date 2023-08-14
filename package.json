@@ -40,7 +40,7 @@
     "@types/jest": "^29.5.3",
     "@types/node": "20.3.1",
     "@types/ramda": "^0.29.3",
-    "@types/react": "18.2.12",
+    "@types/react": "18.2.20",
     "@types/react-dom": "18.2.5",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "autoprefixer": "^10.4.14",
