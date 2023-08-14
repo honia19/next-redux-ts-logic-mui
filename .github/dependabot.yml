@@ -1,0 +1,13 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependency"
+      - "need review"
+    reviewers:
+      - "honia19"
+    open-pull-requests-limit: 10
