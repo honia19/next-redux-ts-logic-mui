@@ -24,8 +24,9 @@ pnpm dev
 
 ## Description
 Photo: [![Mockup](https://drive.google.com/file/d/1sGZBC0GApGbAYJmCOdX1P1bqg24gSaMe/view?usp=sharing "Mockup")](https://drive.google.com/file/d/1sGZBC0GApGbAYJmCOdX1P1bqg24gSaMe/view?usp=sharing "Mockup")
-##Demo
-[Link](htthttps://next-redux-ts-logic-mui.vercel.app/p:// "Link")
+
+## Demo
+[Link](https://next-redux-ts-logic-mui.vercel.app/p:// "Link")
 
 
 
