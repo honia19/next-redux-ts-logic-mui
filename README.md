@@ -22,8 +22,8 @@ pnpm dev
 - Jest
 - Rect-Testing-Library
 
-## Description
-Photo: [![Mockup](https://drive.google.com/file/d/1sGZBC0GApGbAYJmCOdX1P1bqg24gSaMe/view?usp=sharing "Mockup")](https://drive.google.com/file/d/1sGZBC0GApGbAYJmCOdX1P1bqg24gSaMe/view?usp=sharing "Mockup")
+## Design
+![mockup](https://github.com/honia19/next-redux-ts-logic-mui/assets/19596245/b1c53e2f-475f-479d-b292-b28a5bbadc41)
 
 ## Demo
 [Link](https://next-redux-ts-logic-mui.vercel.app/p:// "Link")
