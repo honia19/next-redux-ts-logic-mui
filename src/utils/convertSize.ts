@@ -6,7 +6,7 @@ export enum Unit {
   Terabytes = 'TB',
 }
 
-const convertBytes = (bytes: number, unit: Unit): string => {
+const convertSize = (bytes: number, unit: Unit): string => {
   const units = Object.values(Unit);
   const unitIndex = units.indexOf(unit);
   const size = bytes / Math.pow(1024, unitIndex);
@@ -14,4 +14,4 @@ const convertBytes = (bytes: number, unit: Unit): string => {
   return size.toFixed(1) + ' ' + unit;
 };
 
-export default convertBytes;
+export default convertSize;
