@@ -5,8 +5,8 @@ import { IButton } from './types';
 
 export const StyledCustomButton = styled(Button)<IButton>(
   ({
-    width = 165,
-    height = 20,
+    width = '165px',
+    height = '20px',
     fontSize = 16,
     fontWeight = 600,
     backgroundColor = 'transparent',
@@ -18,12 +18,12 @@ export const StyledCustomButton = styled(Button)<IButton>(
     fontStyle: 'normal',
     fontWeight,
     width,
-    height: `${height}px`,
+    height,
     borderRadius: '4px',
     backgroundColor,
     borderWidth: '1px',
     borderStyle: 'solid',
     borderColor,
     textTransform: 'capitalize',
-  })
+  }),
 );

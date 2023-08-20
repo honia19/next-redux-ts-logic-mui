@@ -6,5 +6,5 @@ import * as constants from './constants';
 export const fetchImagesEndpoint = endpoint(
   constants.FETCH_IMAGES,
   'GET',
-  routes.imagesRoute
+  routes.imagesRoute,
 );

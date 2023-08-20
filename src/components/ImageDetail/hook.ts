@@ -27,7 +27,7 @@ const useContainer = () => {
         dispatch(removeImage(id));
       }
     },
-    [isFavoriteSelectedImage, dispatch]
+    [isFavoriteSelectedImage, dispatch],
   );
 
   const handleCloseDetailImage = useCallback(() => {
@@ -46,7 +46,7 @@ const useContainer = () => {
 
       dispatch(clearSelectedImage());
     },
-    [isFavoriteSelectedImage, dispatch]
+    [isFavoriteSelectedImage, dispatch],
   );
 
   return {

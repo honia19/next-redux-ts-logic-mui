@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Metadata should render correctly 1`] = `
+{
+  "description": "Portfolio for interview task",
+  "icons": [
+    {
+      "rel": "icon",
+      "url": "/img.jpg",
+    },
+    {
+      "rel": "icon",
+      "sizes": "32x32",
+      "type": "image/png",
+      "url": "/img.jpg",
+    },
+    {
+      "rel": "icon",
+      "sizes": "16x16",
+      "type": "image/png",
+      "url": "/img.jpg",
+    },
+    {
+      "rel": "apple-touch-icon",
+      "sizes": "180x180",
+      "url": "/img.jpg",
+    },
+    {
+      "rel": "icon",
+      "sizes": "192x192",
+      "url": "/img.jpg",
+    },
+  ],
+  "title": "Images app",
+}
+`;

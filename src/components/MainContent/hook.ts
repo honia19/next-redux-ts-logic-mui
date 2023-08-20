@@ -16,12 +16,12 @@ function useContainer() {
   const dispatch = useAppDispatch();
   const selectedRecentImage: IImage = useAppSelector(selectedImageSelector);
   const selectedFavoritedImage: IImage = useAppSelector(
-    selectedFavoritedImageSelector
+    selectedFavoritedImageSelector,
   );
 
   const selectedOptionImage = useMemo(
     () => selectedRecentImage || selectedFavoritedImage,
-    [selectedRecentImage, selectedFavoritedImage]
+    [selectedRecentImage, selectedFavoritedImage],
   );
 
   const handleTabChange = useCallback(
@@ -32,7 +32,7 @@ function useContainer() {
 
       setTab(newValue);
     },
-    [setTab, selectedOptionImage, dispatch]
+    [setTab, selectedOptionImage, dispatch],
   );
 
   return {

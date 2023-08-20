@@ -29,6 +29,7 @@ const ImageComponent = ({
 
   return (
     <button
+      data-testid={`image-btn-${id}`}
       onClick={onSelectImage}
       className={clsx('flex flex-col', {
         'm-auto': isShowFavorite,

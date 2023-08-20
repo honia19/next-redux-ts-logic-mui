@@ -22,19 +22,19 @@ const useContainer = ({ tab }: ITab) => {
   const recentImages = useAppSelector(imagesSelector);
   const favoritedImages = useAppSelector(favoritedImagesSelector);
   const isLoading = useAppSelector((state) =>
-    loadingSelector(state, fetchImagesEndpoint.endpoint)
+    loadingSelector(state, fetchImagesEndpoint.endpoint),
   );
 
   const handleSelectImage = useCallback(
     (id: string) => () => {
       dispatch(setSelectedImage(id));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const images = useMemo(
     () => (tab === Tab.RECENT ? recentImages : favoritedImages),
-    [tab, recentImages, favoritedImages]
+    [tab, recentImages, favoritedImages],
   );
   const isLoaded = useMemo(() => isLoading === false, [isLoading]);
 

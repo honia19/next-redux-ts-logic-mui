@@ -7,3 +7,7 @@ export type DataState = {
 export interface DataApiRequestAction {
   endpoint: string;
 }
+
+export type DataStateMeta = {
+  data: DataState;
+};

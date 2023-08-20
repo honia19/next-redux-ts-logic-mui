@@ -2,11 +2,15 @@ import { ThemeProvider } from '@mui/material';
 import { render } from '@testing-library/react';
 import React, { ReactElement } from 'react';
 import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
 
-import store from '@/state/store';
 import { theme } from '@/theme';
 
 import { RenderProviderType } from './types';
+
+const mockStore = configureStore([]);
+const initialState = {};
+const store = mockStore(initialState);
 
 const ReduxProvider = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -22,7 +26,7 @@ const MAP_PROVIDERS = {
 
 const customRender = (
   ui: ReactElement,
-  options?: { wrapperType?: RenderProviderType }
+  options?: { wrapperType?: RenderProviderType },
 ) => {
   const { wrapperType = 'redux', ...restOptions } = options || {};
   return render(ui, { wrapper: MAP_PROVIDERS[wrapperType], ...restOptions });

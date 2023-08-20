@@ -20,7 +20,7 @@ const store = Object.assign(
   {
     logicMiddleware,
     httpClient: logicDeps.httpClient,
-  }
+  },
 );
 
 export default store;

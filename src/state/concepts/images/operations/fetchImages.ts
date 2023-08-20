@@ -21,17 +21,17 @@ const fetchImages = createLogic({
       dispatch(dataApiRequest({ endpoint }));
 
       const { data } = await httpClient.get(url);
+
       const images = groupBy(
         ({ favorited }: { favorited: boolean }) =>
           favorited ? 'favorited' : 'recentlyAdded',
-        data
+        data,
       );
-
       dispatch(addImages(normalize(images.recentlyAdded, arrayOfImagesSchema)));
       dispatch(
         addFavoritedImages(
-          normalize(images.favorited, arrayOfFavoritedImagesSchema)
-        )
+          normalize(images.favorited, arrayOfFavoritedImagesSchema),
+        ),
       );
       dispatch(dataApiFetched({ endpoint }));
     } catch {

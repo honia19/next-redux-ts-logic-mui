@@ -1,7 +1,7 @@
 export interface IButton {
   isOperationAccount?: boolean;
   width?: number | string;
-  height?: number;
+  height?: number | string;
   fontSize?: number;
   fontWeight?: number;
   backgroundColor?: string;

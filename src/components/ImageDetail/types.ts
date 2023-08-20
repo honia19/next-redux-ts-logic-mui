@@ -3,7 +3,7 @@ import { IImage } from '../shared/Image/types';
 export interface IImageDetail
   extends Pick<IImage, 'fileName' | 'size' | 'src'> {
   selectedImage: {
-    description: string;
+    description?: string;
     uploadedBy: string;
     createdAt: string;
     updatedAt: string;

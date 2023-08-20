@@ -58,7 +58,7 @@ export const imagesSlice = createSlice({
         draftState.byId = pipe(
           toPairs,
           reject(([, entity]) => entity.id === action.payload),
-          fromPairs
+          fromPairs,
         )(draftState.byId) as unknown as Record<string, IImage>;
         draftState.allIds = without([action.payload], draftState.allIds);
       });
@@ -76,7 +76,7 @@ export const favoritedImagesSlice = createSlice({
       return produce(state, (draftState) => {
         draftState.byId = Object.assign(
           draftState.byId,
-          entities.favoritedImages
+          entities.favoritedImages,
         );
         draftState.allIds = uniq([
           ...draftState.allIds,
@@ -86,7 +86,7 @@ export const favoritedImagesSlice = createSlice({
     },
     addFavoriteImage: (
       state,
-      action: PayloadAction<IImageDetail['selectedImage']>
+      action: PayloadAction<IImageDetail['selectedImage']>,
     ) => {
       const { id } = action.payload;
 
@@ -102,7 +102,7 @@ export const favoritedImagesSlice = createSlice({
         draftState.byId = pipe(
           toPairs,
           reject(([, entity]) => entity.id === action.payload),
-          fromPairs
+          fromPairs,
         )(draftState.byId) as unknown as Record<string, IImage>;
         draftState.allIds = without([action.payload], draftState.allIds);
       });
@@ -111,7 +111,7 @@ export const favoritedImagesSlice = createSlice({
 });
 
 export const selectedImageSlice = createSlice({
-  name: 'selectedImage',
+  name: 'selectedImageId',
   initialState: null as string | null,
   reducers: {
     setSelectedImage: (_, action: PayloadAction<string>) => action.payload,
@@ -133,12 +133,12 @@ const selectImagesByIdSelector = (state: RootState) =>
 const selectFavoritedImagesByIdSelector = (state: RootState) =>
   state.images.favoritedImages.byId;
 export const selectedImageIdSelector = (state: RootState) =>
-  state.images.selectedImage;
+  state.images.selectedImageId;
 export const selectedImageSelector = createDraftSafeSelector(
   selectedImageIdSelector,
   selectImagesByIdSelector,
   (imageById, imageIds) =>
-    denormalize(imageById, imageSchema, { images: imageIds })
+    denormalize(imageById, imageSchema, { images: imageIds }),
 );
 export const selectedFavoritedImageSelector = createDraftSafeSelector(
   selectedImageIdSelector,
@@ -146,31 +146,31 @@ export const selectedFavoritedImageSelector = createDraftSafeSelector(
   (imageById, imageIds) =>
     denormalize(imageById, favoritedImageSchema, {
       favoritedImages: imageIds,
-    })
+    }),
 );
 export const imagesSelector = createDraftSafeSelector(
   selectImagesByIdSelector,
   (imagesById) =>
-    denormalize(keys(imagesById), arrayOfImagesSchema, { images: imagesById })
+    denormalize(keys(imagesById), arrayOfImagesSchema, { images: imagesById }),
 );
 export const favoritedImagesSelector = createDraftSafeSelector(
   selectFavoritedImagesByIdSelector,
   (imagesById) =>
     denormalize(keys(imagesById), arrayOfFavoritedImagesSchema, {
       favoritedImages: imagesById,
-    })
+    }),
 );
 export const isFavoritedImageSelector = createDraftSafeSelector(
   selectedImageIdSelector,
   favoritedImagesSelector,
   (selectedImageId, favoritedImages) =>
     isPresent(
-      favoritedImages.find(({ id }: IImageItem) => id === selectedImageId)
-    )
+      favoritedImages.find(({ id }: IImageItem) => id === selectedImageId),
+    ),
 );
 
 export default combineReducers({
   recentlyAddedImages: imagesSlice.reducer,
   favoritedImages: favoritedImagesSlice.reducer,
-  selectedImage: selectedImageSlice.reducer,
+  selectedImageId: selectedImageSlice.reducer,
 });

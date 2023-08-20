@@ -39,7 +39,7 @@ const metaSelector = (state: RootState) => state.data.meta;
 export const loadingSelector = createDraftSafeSelector(
   metaSelector,
   (_: RootState, endpoint: string) => endpoint,
-  (meta, endpoint) => meta[endpoint] && meta[endpoint].loading
+  (meta, endpoint) => meta[endpoint] && meta[endpoint].loading,
 );
 
 export default dataSlice.reducer;

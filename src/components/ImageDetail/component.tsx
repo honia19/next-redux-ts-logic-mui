@@ -9,7 +9,7 @@ import Image from '../shared/Image';
 import useContainer from './hook';
 import { IImageDetail } from './types';
 
-const ImageComponent = ({
+const ImageDetailComponent = ({
   src,
   fileName,
   size,
@@ -104,4 +104,4 @@ const ImageComponent = ({
   );
 };
 
-export default memo(ImageComponent);
+export default memo(ImageDetailComponent);
