@@ -15,6 +15,7 @@ pnpm install && pnpm dev
 - Typescript
 - Next.js 13
 - Vercel
+- Github Actions
 - React
 - Redux Toolkit
 - Redux-Logic
