@@ -23,10 +23,10 @@ pnpm install && pnpm dev
 - Normalizr
 - Ramda
 - MUI v5
-- Tailwindcss
+- Tailwind CSS
 - SCSS
 - Jest
-- Rect-Testing-Library
+- React-Testing-Library
 
 ## Design
 ![mockup](https://github.com/honia19/next-redux-ts-logic-mui/assets/19596245/b1c53e2f-475f-479d-b292-b28a5bbadc41)
