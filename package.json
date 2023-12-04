@@ -37,7 +37,7 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
-    "@types/node": "20.6.2",
+    "@types/node": "20.10.3",
     "@types/qs": "^6.9.7",
     "@types/ramda": "^0.29.3",
     "@types/react": "18.2.20",
