@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.13.7",
     "@mui/lab": "^5.0.0-alpha.140",
     "@mui/material": "^5.14.18",
-    "@reduxjs/toolkit": "^1.9.5",
+    "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.4.0",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
